@@ -44,7 +44,7 @@ Dataset is about Customer demographics and transactions data from an [Indian Ban
 
 ### ETL Fact Table (Transactions)
 
-```M
+```javascript
 let
     Origen = Csv.Document(File.Contents("C:\Users\javie\Documents\ML_Zoomcamp_Midterm_Project\dataset\bank_transactions.csv"),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
     #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
@@ -77,7 +77,7 @@ in
 
 ### ETL Dim Table (Customer)
 
-```m
+```javascript
 let
     Origen = Csv.Document(File.Contents("C:\Users\javie\Documents\ML_Zoomcamp_Midterm_Project\dataset\bank_transactions.csv"),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
     #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
