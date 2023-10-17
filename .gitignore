@@ -1,1 +1,3 @@
 dataset/bank_transactions.csv
+dataset/train.csv
+dataset/validation.csv
