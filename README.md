@@ -6,16 +6,62 @@
 
 ## Run The Solution:
 
+```bash
+
+```
+
+```bash
+
+```
+## Table of content
+
+1. [Introduction](#1-introduction)
+2. [Objectives](#2-objectives)
+
+   2.1 [General Objective](#21-general-objective)
+
+   2.2 [Specific Objectives](#22-specific-objectives)
+
+3. [The Problem](#3-the-problem)
+4. [Dataset](#4-dataset)
+5. [Methods and Materials](#5-methods-and-materials)
+6. [Main Results](#6-main-results)
+7. [Conclusion](#7-conclusion)
+8. [References](#8-references)
+9. [Appendix](#9-appendix)
+
+   9.1 [ETL Fact Table (Transactions)](#91-etl-fact-table-transactions)
+
+   9.2 [ETL Dim Table (Customer)](#92-etl-dim-table-customer)
+
 
 
 ## 1. Introduction
+Customer segmentation is a pivotal strategy employed across various industries, enabling businesses to understand their diverse customer base more comprehensively [Christy et al. (2021)](https://www.sciencedirect.com/science/article/pii/S1319157818304178). In the field of banking, where customer needs and behaviors vary widely, effective segmentation holds huge significance. By grouping customers with similar attributes, banks can tailor their services and marketing efforts, ultimately enhancing customer satisfaction and loyalty [Ernawati et al. 2021](https://iopscience.iop.org/article/10.1088/1742-6596/1869/1/012085/meta).
+
+Techniques like RFM (Recency, Frequency, Monetary) analysis simplify this complexity, offering deep insights into how often customers engage, how much they spend, and when they last made a transaction. RFM's power shines brightly when predicting Customer Lifetime Value (CLV), essentially foretelling the revenue a customer is likely to generate over their relationship with a business [Wu, J. et al. (2020)](https://downloads.hindawi.com/journals/mpe/2020/8884227.pdf).
+
+In this machine learning Midterm project, a bank harnessed the power of RFM and advanced algorithms to forecast CLV. Armed with a dataset encompassing a million rows, featuring vital customer information such as date of birth, transaction timestamps, transaction amounts, and account balances, the bank embarked on creating a robust ML model. This project aims to perform a model to predict customer lifetime value accurately. By doing so, the bank aimed to deepen its understanding of customers, optimize marketing strategies, and offer tailored financial products and services. This strategic approach not only enhances customer experiences but also augments the bank's profitability, solidifying its position in an increasingly competitive market.
 
 
 ## 2. Objectives
 
+### 2.1 General Objective
+
+* *Develop a machine learning model to accurately predict customer lifetime value (CLV) for a dataset from an Indian bank to optimize marketing strategies, enhance customer experiences, and improve profitability for the bank*.
+
+### 2.2 Specific Objectives
+
+* Cleanse and prepare the dataset, perform exploratory data analysis (EDA) to gain insights into customer behavior
+* Build a robust predictive model for customer lifetime value by using Scikit-Learn and appropriate machine learning algorithms.
+* Experiment with different algorithms, feature combinations, and hyperparameters to enhance the model's accuracy
+* Visualize customer segments, CLV predictions, and key metrics to facilitate a comprehensive understanding of the model's insights.
+* Leverage Microsoft PowerBI and Streamlit to create interactive visualizations and dashboards.
+
 
 ## 3. The Problem
 
+In the dynamic field of modern banking, the Indian banking sector confronts a pivotal challenge: comprehensively understanding its diverse clientele.  India, with its diverse populace encompassing various languages, traditions, and financial habits, presents a unique tapestry for segmentation. The existing banking segmentation methods often lack the cultural depth required to resonate with the diverse Indian consumer base. This research aims to bridge this gap by developing a sophisticated segmentation framework that not only considers the typical socio-economic variables but also delves deeply into cultural nuances and regional preferences. 
 
 ## 4. Dataset
 
@@ -30,17 +76,54 @@ Dataset is about Customer demographics and transactions data from an [Indian Ban
 * **Python 3.10**: Main programing language alongside its well-known dependencies: Pandas, Numpy, Matplotlib and Plotly.
 * **Scikit-Learn**: Machine Learning library which predicted model has been created. 
 * **Microsoft PowerBI**: Visualization tool to perform interactive dashboard with data segmented
-* **Pipenv**: Environment library to isolate system
-* **Streamlit**: Web-based tool to share model implementation as endpoint. 
+* **Miniconda**: Environment library to isolate system
+* **Streamlit**: Web-based tool to share model implementation as endpoint.
 
 ### Metodology
+
 
 ### Features and Target
 
 * **Features**:
 
+ `account_balance`
+
+ `transaction_amount`
+
+ `gender_int`
+ 
+ `R_score`
+
+* **Target**:
+
+ `RF_segment`
+
 
 ## 6. Main Results
+
+### Data Model
+
+![Data Model](img/DataModel.png)
+
+### Exploratory Data Analysis
+
+### Machine Learning Method
+
+### Tuning Hyperparameters
+
+### Main Metrics
+
+### Final Model
+
+## 7. Conclusion
+
+## 8. References
+
+*  Ernawati, E., Baharin, S. S. K., & Kasmin, F. (2021). A review of data mining methods in RFM-based customer segmentation. In Journal of Physics: Conference Series (Vol. 1869, No. 1, p. 012085). IOP Publishing.
+* Wu, J., Shi, L., Lin, W. P., Tsai, S. B., Li, Y., Yang, L., & Xu, G. (2020). An empirical study on customer segmentation by purchase behaviors using a RFM model and K-means algorithm. Mathematical Problems in Engineering, 2020, 1-7.
+* Christy, A. J., Umamakeswari, A., Priyatharsini, L., & Neyaa, A. (2021). RFM ranking–An effective approach to customer segmentation. Journal of King Saud University-Computer and Information Sciences, 33(10), 1251-1257.
+
+## 9. Apendix
 
 ### ETL Fact Table (Transactions)
 
@@ -111,13 +194,5 @@ in
 
 ```
 
-### Data Model
-
-![Data Model](img/DataModel.png)
 
 
-## 7. Conclusion
-
-## 8. References
-
-* 
