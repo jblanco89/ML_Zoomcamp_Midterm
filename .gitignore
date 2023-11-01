@@ -1,5 +1,3 @@
 dataset/bank_transactions.csv
 dataset/train.csv
 dataset/validation.csv
-src/data/validation_customer_segmented.csv
-src/data/train_customer_segmented.csv

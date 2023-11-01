@@ -7,12 +7,33 @@
 ## Run The Solution:
 
 ```bash
-
+    cd ML_Zoomcamp_Midterm_Project
+    python -m streamlit run ./src/app.py
 ```
+You will get this as a output:
 
 ```bash
-
+    Local URL: http://localhost:8501
+    Network URL: http://192.168.1.137:8501
 ```
+
+If you don't want to run the app locally, you can also check this [DEMO]()
+
+
+## Run APP with DOCKER
+To install the app, you need to have Docker, and Docker-Compose installed on your system. You have a perfect installation guide in this [link](https://github.com/DataTalksClub/mlops-zoomcamp/tree/main/01-intro)
+
+Open a terminal or command prompt, navigate to the directory containing Dockerfile
+```bash
+    docker build -t your_image_name:tag .
+```
+and then
+
+```bash
+    docker run -p 4000:80 your_image_name:tag
+```
+
+
 ## Table of content
 
 1. [Introduction](#1-introduction)
@@ -71,32 +92,29 @@ Dataset is about Customer demographics and transactions data from an [Indian Ban
 ## 5. Methods and Materials
 
 ### Technical Stack
-* **Google Colab**: To develop entire solution, since Exploratory Data Analysis until Model training and validation
-* **Microsoft PowerQuery**: To perform ETL process, cleaning and type formatting included
-* **Python 3.10**: Main programing language alongside its well-known dependencies: Pandas, Numpy, Matplotlib and Plotly.
-* **Scikit-Learn**: Machine Learning library which predicted model has been created. 
-* **Microsoft PowerBI**: Visualization tool to perform interactive dashboard with data segmented
-* **Miniconda**: Environment library to isolate system
-* **Streamlit**: Web-based tool to share model implementation as endpoint.
+| Tool                  | Explanation                                       | Icon            |
+|-----------------------|---------------------------------------------------|------------------|
+| `Google Colab`          | Develop entire solution, including EDA and model training |  |
+|` Microsoft PowerQuery`  | ETL process, cleaning, and type formatting       |  |
+| `Python 3.10`           | Main programming language and dependencies (Pandas, Numpy, Matplotlib, Plotly) | |
+| `Scikit-Learn`          | Machine Learning library used for model creation   |  |
+| `Microsoft PowerBI`     | Visualization tool for interactive dashboards     |  |
+| `Miniconda`             | Environment library for isolating the system      |  |
+| `Streamlit`             | Web-based tool for sharing model implementation   |  |
+
 
 ### Metodology
 
 
+
 ### Features and Target
 
-* **Features**:
-
- `account_balance`
-
- `transaction_amount`
-
- `gender_int`
- 
- `R_score`
-
-* **Target**:
-
- `RF_segment`
+| **Features**         | **Target**  |
+|----------------------|-------------|
+| `account_balance`    | `RF_segment`|
+| `transaction_amount` |             |
+| `gender_int`         |             |
+| `R_score`            |             |
 
 
 ## 6. Main Results
@@ -109,13 +127,53 @@ Dataset is about Customer demographics and transactions data from an [Indian Ban
 
 ### Machine Learning Method
 
+`XGBoost` is a powerful machine learning algorithm renowned for its efficiency and accuracy in various data science tasks, especially in the realm of supervised learning. It belongs to the ensemble learning methods and is based on decision trees. Moreover, `XGBClassifier` is an implementation of XGBoost specifically designed for classification tasks. This method is used to train a predictive model that can classify input data points into different categories or segments based on their features.
+Therefore, `XGBClassifier` is particularly valuable for customer segmentation projects due to its ability to handle nonlinear relationships and capture intricate patterns within customer data. By identifying nuanced patterns in customer behavior, businesses can tailor marketing strategies, improve customer engagement, and enhance overall customer satisfaction.
+
 ### Tuning Hyperparameters
 
-### Main Metrics
+```python
+
+    hyperparameters = {
+                'n_estimators': [100, 300, 400],
+                'max_depth': [3, 4, 5],
+                'learning_rate': [0.1, 1, 0.01],
+                'subsample': [0.7, 0.9],
+            }
+```
+
+![hyperparemeters](/img/hyperparameters.png)
+
 
 ### Final Model
 
+```python
+
+    model = xgb.XGBClassifier(max_depth=10,
+                                learning_rate=0.1,
+                                n_stimators = 400,
+                                objective='multi:softmax',
+                                subsample = 0.7,
+                                num_classes=3)
+
+    with open('./src/model/xgboost_model.pkl', 'wb') as model_file:
+            pickle.dump(model, model_file)                              
+```
+
+![model](/img/training.png)
+
+
 ## 7. Conclusion
+
+In this project, an approach to data preprocessing was adopted, entailing rigorous data cleansing and transformation techniques executed through the PowerQuery editor within PowerBI. Simultaneously, comprehensive Exploratory Data Analysis (EDA) was conducted, enabling a nuanced understanding of the dataset's intricacies. Subsequently, a judicious feature selection process was undertaken, aligned with the observed data behavior.
+
+Advanced machine learning methodologies, notably the XGBOOST classifier, were leveraged to enhance predictive accuracy. Systematic feature engineering encompassed the calculation of essential metrics, including Recency, Frequency, Recency Score, and Frequency Score. Hyperparameter optimization strategies were meticulously implemented to refine the model's performance.
+
+The resultant model exhibited notable prowess, enabling precise customer segmentation with an impressive accuracy of 82%, precision of 85%, and a recall score of 83%. However, it is imperative to acknowledge a limitation: the inability to estimate Customer Lifetime Value (CLV) due to the absence of Return on Investment (ROI) metrics within the dataset. Specifically, the dataset lacked transaction fee metrics and profit-related data from banking entities, essential for accurate CLV estimation.
+
+Looking forward to the capstone project, a more sophisticated segmentation approach is anticipated. Techniques such as K-Nearest Neighbors (KNN) or K-means clustering will be explored, moving beyond percentile-based divisions (25th, 50th, and 75th percentiles). Moreover, enriching the dataset with additional features, such as transaction fees, educational background, and customer occupation, is planned. These enhancements aim to elevate the granularity and depth of analysis, providing a more nuanced understanding of customer behavior and fostering robust predictive models.
+
+
 
 ## 8. References
 
