@@ -8,6 +8,7 @@
 
 ```bash
     cd ML_Zoomcamp_Midterm_Project
+    pip install -r requirements.txt
     python -m streamlit run ./src/app.py
 ```
 You will get this as a output:
@@ -17,7 +18,7 @@ You will get this as a output:
     Network URL: http://192.168.1.137:8501
 ```
 
-If you don't want to run the app locally, you can also check this [DEMO]()
+If you don't want to run the app locally, you can also check this [DEMO](https://mlzoomcampmidterm-fhrpx8rqeg5trwkdn6ufcv.streamlit.app/)
 
 
 ## Run APP with DOCKER
