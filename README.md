@@ -56,7 +56,6 @@ and then
    9.2 [ETL Dim Table (Customer)](#92-etl-dim-table-customer)
 
 
-
 ## 1. Introduction
 Customer segmentation is a pivotal strategy employed across various industries, enabling businesses to understand their diverse customer base more comprehensively [Christy et al. (2021)](https://www.sciencedirect.com/science/article/pii/S1319157818304178). In the field of banking, where customer needs and behaviors vary widely, effective segmentation holds huge significance. By grouping customers with similar attributes, banks can tailor their services and marketing efforts, ultimately enhancing customer satisfaction and loyalty [Ernawati et al. 2021](https://iopscience.iop.org/article/10.1088/1742-6596/1869/1/012085/meta).
 
@@ -121,9 +120,13 @@ Dataset is about Customer demographics and transactions data from an [Indian Ban
 
 ### Data Model
 
+Data Model was performed in PowerBI and it could be found [here](DataModel/)
+
 ![Data Model](img/DataModel.png)
 
 ### Exploratory Data Analysis
+
+All related to Exploratory Data Analysys can be found thin this [notebook](EDA/EDA_MidTerm_ML_Zoomcamp.ipynb)
 
 ### Machine Learning Method
 
