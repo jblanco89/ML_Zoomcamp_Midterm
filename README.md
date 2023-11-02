@@ -127,7 +127,7 @@ Data Model was performed in PowerBI and it could be found [here](DataModel/)
 
 ### Exploratory Data Analysis
 
-All related to Exploratory Data Analysys can be found thin this [notebook](EDA/EDA_MidTerm_ML_Zoomcamp.ipynb)
+All related to Exploratory Data Analysis can be found thin this [notebook](EDA/EDA_MidTerm_ML_Zoomcamp.ipynb)
 
 ### Machine Learning Method
 
